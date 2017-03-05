@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='super911App'>
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <script src="app.js"></script>
-</body>
-</html>
+<body ng-controller = 'super911sCtrl as vm'>
+  <h1>Superhero 911</h1>
+  <input type='text' ng-model='search' placeholder='Search' />
+  <div ng-repeat = 'super911 in vm.super911s | filter:search'>
+    <p>{{$index + 1}}. {{super911.name}}</p>
+    <p>{{super911.comicOrigin}}</p>
+    <p>{{super911.phone}}</p>
+    <img ng-src = "{{super911.image_url}}">
+  </div>
+  <div>
+    <input type="text" ng-model='vm.newSuper911.name'>
+    <input type="text" ng-model='vm.newSuper911.phone'>
+    <input type="text" ng-model='vm.newSuper911.comicOrigin'>
+    <input type="text" ng-model='vm.newSuper911.image_url'>
+    <button ng-click ='vm.addNumbers()'>Add New Member</button>
+    <p>User Input: {{vm.newSuper911.name}} {{vm.newSuper911.phone}} {{vm.newSuper911.comicOrigin}}<img ng-src = "{{vm.newSuper911.image_url}}>"</p
+    </div>
+  </body>
+  </html>
