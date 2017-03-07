@@ -14,4 +14,7 @@ function super911Controller (){
     let super911 = {name: this.newSuper911.name, description: this.newSuper911.description, image_url:this.newSuper911.image_url}
     this.super911s.push(super911)
   }
+  this.showMe = function(idx) {
+    this.super911s[idx][idx] = true;
+  }
 };

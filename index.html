@@ -16,7 +16,8 @@
     <p>{{$index + 1}}. {{super911.name}}</p>
     <p>{{super911.comicOrigin}}</p>
     <p>{{super911.phone}}</p>
-    <img ng-src="{{super911.image_url}}">
+    <img ng-show="super911[$index] == true" ng-src="{{super911.image_url}}">
+    <button ng-click="vm.showMe($index)">showMe</button>
   </div>
   <!-- <div>
     <input type="text" ng-model='vm.newSuper911.name'>
